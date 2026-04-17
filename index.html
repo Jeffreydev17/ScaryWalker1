@@ -1,0 +1,158 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Profile Card | Developer Portfolio</title>
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <article class="profile-card" data-testid="test-profile-card">
+      <div class="card-inner">
+        <div class="card-grid">
+          <div class="avatar-wrapper">
+            <figure class="avatar-figure">
+              <img
+                class="avatar-img"
+                src="/images/WhatsApp Image 2026-04-16 at 20.10.53.jpeg"
+                alt="Portrait of Ngoka Jeffrey Chinemerem, smiling with a casual denim jacket"
+                data-testid="test-user-avatar"
+                loading="lazy"
+              />
+              <figcaption>Profile photo</figcaption>
+            </figure>
+          </div>
+
+          <!-- MAIN INFO SECTION -->
+          <div class="info-wrapper">
+            <header class="name-header">
+              <h2 data-testid="test-user-name">Ngoka Jeffrey Chinemerem</h2>
+            </header>
+
+            <!-- Short biography paragraph -->
+            <p class="user-bio" data-testid="test-user-bio">
+              Junior front-end architect & accessibility advocate. I turn
+              complex designs into inclusive, high-performance web experiences.
+              Passionate about design systems and React ecosystems.
+            </p>
+
+            <!-- CURRENT TIME (epoch milliseconds) - dynamic JS updates every second -->
+            <div class="time-container" aria-live="polite">
+              <span class="time-label">🕒 Current epoch time (ms):</span>
+              <span data-testid="test-user-time" id="epochTimeMs">--</span>
+            </div>
+
+            <!-- SOCIAL LINKS SECTION (semantic nav + unordered list) -->
+            <nav class="social-section" aria-label="Social media links">
+              <div class="section-title">Contact Me...</div>
+              <ul
+                class="social-links-list"
+                data-testid="test-user-social-links"
+              >
+                <li>
+                  <a
+                    href="https://x.com/Chinemerem38359"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid="test-user-social-twitter"
+                    class="social-link"
+                  >
+                    🐦 Twitter
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/Jeffreydev17"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid="test-user-social-github"
+                    class="social-link"
+                  >
+                    💻 GitHub
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/jeffrey-ngoka-1b9a91370?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid="test-user-social-linkedin"
+                    class="social-link"
+                  >
+                    🔗 LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/share/18ipTpS6rv/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid="test-user-social-facebook"
+                    class="social-link"
+                  >
+                    📘 Facebook
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+            <!-- HOBBIES & DISLIKES two-column grid (responsive) -->
+            <div class="preferences-grid">
+              <!-- HOBBIES SECTION -->
+              <section
+                class="hobbies-section"
+                aria-labelledby="hobbies-heading"
+              >
+                <h3 id="hobbies-heading" class="list-heading">✨ Hobbies</h3>
+                <ul class="hobbies-list" data-testid="test-user-hobbies">
+                  <li>Reading</li>
+                  <li>Travelling</li>
+                  <li>Football</li>
+                  <li>Cooking</li>
+                  <li>Surfing the internet</li>
+                </ul>
+              </section>
+
+              <!-- DISLIKES SECTION -->
+              <section
+                class="dislikes-section"
+                aria-labelledby="dislikes-heading"
+              >
+                <h3 id="dislikes-heading" class="list-heading">🚫 Dislikes</h3>
+                <ul class="dislikes-list" data-testid="test-user-dislikes">
+                  <li>Inaccessible web components</li>
+                  <li>Excessive pop-up ads</li>
+                  <li>Broken keyboard navigation</li>
+                </ul>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    Dynamic time update script (epoch milliseconds)
+    <script>
+      (function updateEpochTime() {
+        const timeElement = document.getElementById("epochTimeMs");
+        if (timeElement) {
+          // Update with current Date.now() value in milliseconds
+          timeElement.textContent = Date.now();
+        }
+      })();
+
+      // Update every 500ms to keep the time accurate and fresh (within reasonable delta)
+      setInterval(() => {
+        const timeElement = document.getElementById("epochTimeMs");
+        if (timeElement) {
+          timeElement.textContent = Date.now();
+        }
+      }, 500);
+    </script>
+  </body>
+</html>
+  </body>
+</html>

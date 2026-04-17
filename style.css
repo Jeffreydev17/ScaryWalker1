@@ -1,0 +1,357 @@
+ {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #f5f7fc 0%, #e9eef4 100%);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+  margin: 0;
+}
+
+/* ========== PROFILE CARD MAIN CONTAINER ========== */
+.profile-card {
+  max-width: 1100px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 2rem;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.12), 0 5px 12px -4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-card:focus-within {
+  box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.2);
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+.card-inner {
+  padding: 1.8rem;
+}
+
+/* ========== TWO-COLUMN GRID (RESPONSIVE) ========== */
+.card-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ========== AVATAR SECTION ========== */
+.avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-figure {
+  margin: 0;
+  width: 100%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: linear-gradient(145deg, #f0f2f5, #e6eaf0);
+  box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease;
+}
+
+.avatar-figure:hover {
+  transform: scale(1.01);
+}
+
+.avatar-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.avatar-figure figcaption {
+  text-align: center;
+  font-size: 0.7rem;
+  padding: 0.5rem;
+  background: #ffffffcc;
+  backdrop-filter: blur(4px);
+  color: #1e293b;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* ========== INFO WRAPPER (RIGHT COLUMN) ========== */
+.info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* NAME HEADER */
+.name-header h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  background: linear-gradient(120deg, #0f172a, #2d3a5e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -0.3px;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+/* BIOGRAPHY */
+.user-bio {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #334155;
+  background: #f8fafc;
+  padding: 1rem 1.2rem;
+  border-radius: 1.2rem;
+  margin: 0;
+  border: 1px solid #e2e8f0;
+}
+
+/* TIME CONTAINER (EPOCH) */
+.time-container {
+  background: linear-gradient(115deg, #eef2ff, #e0e7ff);
+  padding: 0.75rem 1rem;
+  border-radius: 2rem;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  font-weight: 500;
+  width: fit-content;
+  border: 1px solid #c7d2fe;
+}
+
+.time-label {
+  font-size: 0.85rem;
+  color: #1e293b;
+}
+
+[data-testid="test-user-time"] {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 0.2rem 0.7rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* SOCIAL SECTION (NAV + LIST) */
+.social-section {
+  margin-top: 0.25rem;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #4f46e5;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+  border-bottom: 2px solid #cbd5e1;
+  padding-bottom: 0.2rem;
+}
+
+.social-links-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #f1f5f9;
+  padding: 0.55rem 1.1rem;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #1e293b;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  border: 1px solid #e2e8f0;
+}
+
+.social-link:hover {
+  background: #4f46e5;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px -8px rgba(79, 70, 229, 0.4);
+  border-color: #4f46e5;
+}
+
+.social-link:focus-visible {
+  outline: 2px solid #0f172a;
+  outline-offset: 3px;
+  background: #4f46e5;
+  color: white;
+}
+
+/* PREFERENCES GRID (HOBBIES & DISLIKES) */
+.preferences-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.hobbies-section,
+.dislikes-section {
+  background: #ffffff;
+  border-radius: 1.2rem;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #edf2f7;
+  transition: all 0.2s;
+}
+
+.list-heading {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #0f172a;
+}
+
+.hobbies-list,
+.dislikes-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 0;
+}
+
+.hobbies-list li,
+.dislikes-list li {
+  font-size: 0.9rem;
+  padding: 0.25rem 0 0.25rem 1.5rem;
+  position: relative;
+  color: #2c3e50;
+}
+
+.hobbies-list li::before {
+  content: "✨";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  font-size: 0.85rem;
+}
+
+.dislikes-list li::before {
+  content: "🚫";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  font-size: 0.8rem;
+}
+
+/* ========== RESPONSIVE DESIGN (MOBILE FIRST BREAKPOINTS) ========== */
+@media (max-width: 780px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .avatar-wrapper {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .name-header h2 {
+    font-size: 1.6rem;
+    text-align: center;
+    border-left: none;
+    border-bottom: 3px solid #4f46e5;
+    padding-left: 0;
+    padding-bottom: 0.5rem;
+  }
+
+  .user-bio {
+    text-align: center;
+  }
+
+  .time-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .social-links-list {
+    justify-content: center;
+  }
+
+  .preferences-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card-inner {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-card {
+    border-radius: 1.5rem;
+  }
+
+  .social-link {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.8rem;
+  }
+
+  .name-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .user-bio {
+    font-size: 0.9rem;
+  }
+
+  .time-label {
+    font-size: 0.75rem;
+  }
+}
+
+/* ========== ACCESSIBILITY & KEYBOARD FOCUS ========== */
+.social-link:focus-visible,
+.avatar-img:focus-visible {
+  outline: 3px solid #1e293b;
+  outline-offset: 3px;
+}
+
+.profile-card:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 3px #4f46e5, 0 20px 35px -10px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional hover interactions for better experience */
+.hobbies-section:hover,
+.dislikes-section:hover {
+  background: #fefefe;
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* ensure epoch time has sufficient contrast */
+[data-testid="test-user-time"] {
+  background: #0f172a;
+  color: #f1f5f9;
+}
