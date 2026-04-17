@@ -64,6 +64,8 @@ body {
   height: auto;            /* ✅ natural height */
   object-fit: contain;     /* ✅ show FULL image */
   display: block;
+  aspect-ratio: au;
+  
 }
 
 /* ========== INFO WRAPPER (RIGHT COLUMN) ========== */
@@ -211,7 +213,7 @@ body {
   }
 
   .avatar-wrapper {
-    max-width: 260px;
+    max-width: 100%;
     margin: 0 auto;
   }
 
