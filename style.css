@@ -45,9 +45,8 @@ body {
 
 /* ========== AVATAR SECTION ========== */
 .avatar-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;          /* ✅ no flex shrinking issues */
+  width: 100%;
 }
 
 .avatar-figure {
@@ -57,32 +56,14 @@ body {
   overflow: hidden;
   background: linear-gradient(145deg, #f0f2f5, #e6eaf0);
   box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.15);
-  transition: transform 0.25s ease;
 }
 
-.avatar-figure:hover {
-  transform: scale(1.01);
-}
-
-/* ✅ FIXED IMAGE */
+/* ✅ FIXED IMAGE (NO CROPPING ANYWHERE) */
 .avatar-img {
   width: 100%;
-  height: 220px;            /* fixed height */
-  object-fit: cover;        /* fill nicely */
-  object-position: top;     /* 🔥 keeps head visible */
+  height: auto;            /* ✅ natural height */
+  object-fit: contain;     /* ✅ show FULL image */
   display: block;
-  transition: filter 0.3s ease;
-}
-
-.avatar-figure figcaption {
-  text-align: center;
-  font-size: 0.7rem;
-  padding: 0.5rem;
-  background: #ffffffcc;
-  backdrop-filter: blur(4px);
-  color: #1e293b;
-  font-weight: 500;
-  letter-spacing: 0.3px;
 }
 
 /* ========== INFO WRAPPER (RIGHT COLUMN) ========== */
