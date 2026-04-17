@@ -50,6 +50,7 @@ body {
   width: 100%;
   margin: 0;
   max-width: none;
+  margin-top: 40px;
 }
 
 .avatar-figure {
@@ -63,10 +64,9 @@ body {
 
 .avatar-img {
   width: 100%;
-  height: 220px;
-  display: block;
-  object-fit: cover; /* FULL IMAGE SHOWS */
-  object-position: 50% 0%;
+  max-height: 400px;
+  object-fit: contain;
+  margin-top: 20px;
 }
 
 .avatar-figure figcaption {
