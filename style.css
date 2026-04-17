@@ -1,4 +1,4 @@
- {
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -64,11 +64,12 @@ body {
   transform: scale(1.01);
 }
 
+/* ✅ FIXED IMAGE */
 .avatar-img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  height: 220px;            /* fixed height */
+  object-fit: cover;        /* fill nicely */
+  object-position: top;     /* 🔥 keeps head visible */
   display: block;
   transition: filter 0.3s ease;
 }
@@ -203,7 +204,7 @@ body {
   color: white;
 }
 
-/* PREFERENCES GRID (HOBBIES & DISLIKES) */
+/* PREFERENCES GRID */
 .preferences-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -221,50 +222,7 @@ body {
   transition: all 0.2s;
 }
 
-.list-heading {
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-bottom: 0.7rem;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #0f172a;
-}
-
-.hobbies-list,
-.dislikes-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding-left: 0;
-}
-
-.hobbies-list li,
-.dislikes-list li {
-  font-size: 0.9rem;
-  padding: 0.25rem 0 0.25rem 1.5rem;
-  position: relative;
-  color: #2c3e50;
-}
-
-.hobbies-list li::before {
-  content: "✨";
-  position: absolute;
-  left: 0;
-  top: 0.2rem;
-  font-size: 0.85rem;
-}
-
-.dislikes-list li::before {
-  content: "🚫";
-  position: absolute;
-  left: 0;
-  top: 0.2rem;
-  font-size: 0.8rem;
-}
-
-/* ========== RESPONSIVE DESIGN (MOBILE FIRST BREAKPOINTS) ========== */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 780px) {
   .card-grid {
     grid-template-columns: 1fr;
@@ -330,30 +288,3 @@ body {
     font-size: 0.75rem;
   }
 }
-
-/* ========== ACCESSIBILITY & KEYBOARD FOCUS ========== */
-.social-link:focus-visible,
-.avatar-img:focus-visible {
-  outline: 3px solid #1e293b;
-  outline-offset: 3px;
-}
-
-.profile-card:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 3px #4f46e5, 0 20px 35px -10px rgba(0, 0, 0, 0.2);
-}
-
-/* Additional hover interactions for better experience */
-.hobbies-section:hover,
-.dislikes-section:hover {
-  background: #fefefe;
-  border-color: #cbd5e1;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
-}
-
-/* ensure epoch time has sufficient contrast */
-[data-testid="test-user-time"] {
-  background: #0f172a;
-  color: #f1f5f9;
-}
-</style>
