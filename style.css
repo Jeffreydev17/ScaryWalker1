@@ -48,9 +48,8 @@ body {
 /* ========== IMAGE SECTION ========== */
 .avatar-wrapper {
   width: 100%;
-  margin: 0;
-  max-width: none;
-  margin-top: 40px;
+  max-width: 300px;
+  margin-top: 20px auto;
 }
 
 .avatar-figure {
@@ -66,9 +65,8 @@ body {
 
 .avatar-img {
   width: 100%;
-  max-height: 600px;
-  object-fit: contain;
-  margin-top: 20px;
+  height: auto;
+  display: block;
 }
 
 .avatar-figure figcaption {
@@ -224,6 +222,15 @@ body {
 
 /* ========== MOBILE ========== */
 @media (max-width: 600px) {
+  .avatar-wrapper {
+    max-width: 220px; /* 👈 smaller but controlled */
+    margin: 20px auto;
+  }
+
+  .avatar-img {
+    width: 100%;
+    height: auto;
+  }
   body {
     padding: 12px;
   }
